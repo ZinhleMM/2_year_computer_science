@@ -17,9 +17,12 @@ var birds = [];
 var colors = [];
 var ground;
 var slingshotBird, slingshotConstraint;
-var angle=0;
-var angleSpeed=0;
+var angle = 0;
+var angleSpeed = 0;
 var canvas;
+////////////////////////////////////////////////////////////
+var boxes = []; // Array to store box bodies
+var colors = []; // Array to store colors of the boxes
 ////////////////////////////////////////////////////////////
 function setup() {
   canvas = createCanvas(1000, 600);
@@ -85,7 +88,7 @@ function keyTyped(){
 //if mouse is released destroy slingshot constraint so that
 //slingshot bird can fly off
 function mouseReleased(){
-  setTimeout(() => {
+    setTimeout(() => {
     slingshotConstraint.bodyB = null;
     slingshotConstraint.pointA = { x: 0, y: 0 };
   }, 100);
